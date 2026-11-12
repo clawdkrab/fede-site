@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<!-- custom -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$FEDE · Fede, the flamingo from GTA 6</title>
+<meta name="description" content="The cartoon flamingo in GTA 6 is called Fede. Rockstar's own website code stores his animation as Fede_AWOOGA_v02. Here's the proof.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fedeflamingo.com/">
+<meta property="og:site_name" content="Fede the Flamingo">
+<meta property="og:title" content="$FEDE · Fede, the flamingo from GTA 6">
+<meta property="og:description" content="Rockstar's own website code names the flamingo Fede. Every step is checkable on rockstargames.com/VI.">
+<meta property="og:image" content="https://fedeflamingo.com/assets/og_hero_v1.jpg?v=1">
+<meta property="og:image:secure_url" content="https://fedeflamingo.com/assets/og_hero_v1.jpg?v=1">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1800">
+<meta property="og:image:height" content="945">
+<meta property="og:image:alt" content="Fede the flamingo in pink shades on the Vice City beach, with the case file on how we found his name">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@FedeFlamingo">
+<meta name="twitter:title" content="$FEDE · Fede, the flamingo from GTA 6">
+<meta name="twitter:description" content="Rockstar's own website code names the flamingo Fede. Every step is checkable on rockstargames.com/VI.">
+<meta name="twitter:image" content="https://fedeflamingo.com/assets/og_hero_v1.jpg?v=1">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&family=DM+Mono:wght@500&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#13265c;--cream:#fff6e9;--sand:#ffe6c4;--blush:#ffe0ee;--aqua:#2ec9d8;--aqua2:#bdf3f8;--pink:#ff4fa3;--hot:#ff2f8f;--sun:#ffd23f;--lilac:#b99cff;
+  --title:"Shrikhand",cursive;--body:"DM Sans",system-ui,sans-serif;--mono:"DM Mono",ui-monospace,monospace;--script:"Pacifico",cursive;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--cream)}
+body{font-family:var(--body);color:var(--navy);background:var(--cream);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--pink);color:#fff}
+code{font:500 .88em var(--mono);color:var(--hot);background:rgba(255,79,163,.1);padding:1px 6px;border-radius:6px;overflow-wrap:anywhere}
+
+/* candy-stripe title lettering */
+.stripe{font-family:var(--title);font-weight:400;color:var(--pink);line-height:.95;letter-spacing:.01em;
+  text-shadow:3px 3px 0 var(--cream),6px 6px 0 var(--sun),9px 9px 0 var(--aqua),12px 12px 0 var(--navy)}
+.deco{display:inline-flex;flex-direction:column;gap:4px;vertical-align:middle;margin-right:12px}
+.deco i{display:block;width:34px;height:4px;border-radius:4px;background:var(--pink)}
+.deco i:nth-child(2){background:var(--sun);width:26px}.deco i:nth-child(3){background:var(--aqua);width:18px}
+.eyebrow{display:inline-flex;align-items:center;font:800 13px/1 var(--body);letter-spacing:.28em;text-transform:uppercase;color:var(--navy)}
+
+/* pill nav */
+.top{position:fixed;inset:14px 0 auto;z-index:50;display:flex;justify-content:center;pointer-events:none}
+.pills{pointer-events:auto;display:flex;gap:4px;padding:6px;border-radius:999px;background:rgba(255,246,233,.92);backdrop-filter:blur(10px);
+  border:2px solid var(--navy);box-shadow:4px 4px 0 var(--navy)}
+.pills a{font:800 13px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:10px 16px;border-radius:999px;transition:.2s}
+.pills a:hover{background:var(--aqua2)}
+.pills a.on{background:var(--pink);color:#fff}
+
+/* sticker buttons */
+.sticker{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;border:2.5px solid var(--navy);background:var(--sun);color:var(--navy);
+  font:800 15px/1 var(--body);letter-spacing:.06em;text-transform:uppercase;padding:14px 24px;box-shadow:5px 5px 0 var(--navy);transition:transform .15s,box-shadow .15s;text-decoration:none}
+.sticker:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--navy)}
+.sticker:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--navy)}
+.sticker.pink{background:var(--pink);color:#fff}
+.sticker.aqua{background:var(--aqua)}
+
+/* ============ HERO ============ */
+.hero{position:relative;height:100vh;min-height:700px;overflow:hidden;background:#0a8bfd url(assets/footer_day.jpg) center 70%/cover no-repeat}
+.hero::after{content:"";position:absolute;inset:auto 0 0;height:90px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 90' preserveAspectRatio='none'%3E%3Cpath d='M0 40 Q 120 0 240 40 T 480 40 T 720 40 T 960 40 T 1200 40 T 1440 40 V90 H0Z' fill='%23fff6e9'/%3E%3C/svg%3E") center bottom/100% 100% no-repeat;z-index:6;pointer-events:none}
+.rays{position:absolute;left:-10vw;top:-30vh;width:90vw;height:110vh;z-index:1;pointer-events:none;opacity:.5;
+  background:repeating-conic-gradient(from 0deg at 30% 45%,rgba(255,255,255,.55) 0 6deg,transparent 6deg 14deg);
+  -webkit-mask:radial-gradient(circle at 30% 45%,#000 0,rgba(0,0,0,.6) 30%,transparent 62%);mask:radial-gradient(circle at 30% 45%,#000 0,rgba(0,0,0,.6) 30%,transparent 62%);animation:spin 80s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.h-title{position:absolute;z-index:4;left:clamp(16px,5vw,80px);top:clamp(90px,13vh,130px)}
+.h-title .stripe{font-size:clamp(100px,min(13vw,22vh),230px);display:block;transform:rotate(-6deg);transform-origin:left bottom}
+.h-title .tag{display:inline-block;margin:22px 0 0 10px;background:var(--cream);border:2.5px solid var(--navy);border-radius:999px;padding:10px 18px;
+  font:800 clamp(13px,1.1vw,16px)/1 var(--body);letter-spacing:.18em;text-transform:uppercase;box-shadow:4px 4px 0 var(--navy);transform:rotate(-3deg)}
+.h-title .tag b{color:var(--hot)}
+.h-fede{position:absolute;z-index:3;right:clamp(10px,6vw,110px);bottom:60px;width:min(28vw,470px,54vh);pointer-events:none}
+.h-fede img{width:100%;height:auto;filter:drop-shadow(0 10px 10px rgba(19,38,92,.25))}
+.h-fede::before{content:"";position:absolute;left:8%;right:8%;bottom:-2%;height:9%;border-radius:50%;background:radial-gradient(closest-side,rgba(19,38,92,.35),transparent);z-index:-1}
+.h-card{position:absolute;z-index:5;left:clamp(16px,4.5vw,76px);bottom:100px;width:min(38vw,620px,calc((100vh - 300px - clamp(90px,13vh,130px) - min(12.35vw,20.9vh)) * 1.7778));min-width:320px;transform:rotate(-2deg)}
+.stamp{display:flex;align-items:center;gap:14px;margin:16px 0 0 18px;padding:10px 16px 10px 12px;background:var(--cream);color:var(--navy);width:fit-content;max-width:calc(100vw - 60px);
+  border:2.5px solid var(--navy);border-radius:14px;box-shadow:4px 4px 0 var(--navy);transform:rotate(1.5deg)}
+.stamp img{width:34px;height:auto;flex:none}
+.stamp b{display:block;font:400 clamp(15px,1.3vw,21px)/1.05 var(--title);color:var(--hot);white-space:nowrap}
+.stamp small{display:block;margin-top:4px;font:500 12px var(--mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stamp small a{text-decoration:underline;text-underline-offset:2px}
+.stamp small a:hover{color:var(--hot)}
+.polaroid{background:#fff;padding:12px 12px 14px;border-radius:6px;box-shadow:10px 10px 0 var(--navy);border:2.5px solid var(--navy);position:relative}
+.polaroid::before,.polaroid::after{content:"";position:absolute;top:-14px;width:96px;height:26px;background:rgba(255,210,63,.85);border:1.5px solid rgba(19,38,92,.25);transform:rotate(-8deg)}
+.polaroid::before{left:-18px}.polaroid::after{right:-18px;transform:rotate(9deg);background:rgba(46,201,216,.8)}
+.polaroid video{width:100%;aspect-ratio:16/9;background:#000;border-radius:3px}
+.polaroid .cap{margin-top:10px;font:400 18px/1 var(--script);color:var(--navy);text-align:center}
+
+/* ribbon ticker */
+.ribbon{position:relative;z-index:7;background:var(--pink);border-block:2.5px solid var(--navy);overflow:hidden;white-space:nowrap;transform:rotate(-1.2deg);margin:-14px -2vw 0;box-shadow:0 6px 0 var(--navy)}
+.ribbon div{display:inline-flex;gap:38px;padding:13px 0;animation:tick 34s linear infinite;font:400 22px/1 var(--title);color:#fff;text-shadow:2px 2px 0 var(--navy)}
+.ribbon span::after{content:"✦";margin-left:38px;color:var(--sun)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* sections + waves */
+.wave{display:block;width:100%;height:70px}
+section{position:relative;padding:clamp(46px,7vh,80px) clamp(16px,5.5vw,80px)}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+h2{font-weight:400;margin:10px 0 14px}
+.lede{font-size:clamp(16px,1.2vw,18px);line-height:1.65;color:#2c3d6e;max-width:640px}
+.lede b{color:var(--navy);font-weight:800}
+
+/* WHY */
+#why{background:var(--cream);padding-top:clamp(60px,9vh,100px)}
+#why h2 .stripe{font-size:clamp(54px,7vw,118px)}
+#why h2 .script{font:400 clamp(30px,3.6vw,56px)/1 var(--script);color:var(--navy);display:inline-block;transform:rotate(-6deg);margin-right:.25em;vertical-align:middle}
+.why-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(26px,4vw,64px);align-items:center}
+.why-grid .lede+.lede{margin-top:12px}
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.chip{border:2.5px solid var(--navy);border-radius:18px;padding:12px 16px;box-shadow:4px 4px 0 var(--navy);min-width:150px}
+.chip small{display:block;font:800 11px/1 var(--body);letter-spacing:.24em}
+.chip b{display:block;margin-top:7px;font:400 20px/1.05 var(--title)}
+.c1{background:var(--pink);color:#fff}.c1 b{font:500 15px/1.2 var(--mono)}
+.c2{background:var(--sun)}
+.c3{background:var(--aqua2)}
+.postcard{position:relative;background:#fff;padding:12px;border:2.5px solid var(--navy);border-radius:8px;box-shadow:12px 12px 0 var(--aqua);transform:rotate(2.5deg)}
+.postcard img{border-radius:4px}
+.postcard .pc-stamp{position:absolute;right:-18px;top:-22px;width:92px;height:92px;border-radius:50%;background:var(--sun);border:2.5px dashed var(--navy);
+  display:grid;place-items:center;text-align:center;font:400 15px/1 var(--title);color:var(--navy);transform:rotate(14deg);box-shadow:3px 3px 0 var(--navy)}
+
+/* EVIDENCE */
+#evidence{background:var(--aqua2)}
+#evidence .head{text-align:center}
+#evidence h2 .stripe{font-size:clamp(46px,6vw,100px)}
+.route{position:relative;max-width:1150px;margin:30px auto 0}
+.route-line{position:absolute;left:50%;top:0;bottom:0;width:8px;transform:translateX(-50%);z-index:0;border-radius:8px;
+  background:repeating-linear-gradient(180deg,rgba(19,38,92,.25) 0 10px,transparent 10px 20px)}
+.route-fill{position:absolute;left:0;right:0;top:0;height:0;border-radius:8px;background:repeating-linear-gradient(180deg,var(--pink) 0 10px,transparent 10px 20px)}
+.route-heart{position:absolute;left:50%;top:0;z-index:1;width:34px;height:34px;margin:-17px 0 0 -17px;display:grid;place-items:center;font-size:30px;color:var(--hot);
+  text-shadow:2px 2px 0 var(--navy);opacity:0;transition:opacity .3s}
+.route-heart.on{opacity:1;animation:beat .8s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}40%{transform:scale(1.25)}}
+.stop{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:clamp(44px,6vw,90px);align-items:center;margin-bottom:clamp(34px,5vh,60px)}
+.stop>div{min-width:0}
+.stop:nth-child(even) .shot{order:2}
+.shot{background:#fff;padding:10px 10px 30px;border:2.5px solid var(--navy);border-radius:6px;box-shadow:8px 8px 0 var(--navy);transform:rotate(-1.5deg)}
+.stop:nth-child(even) .shot{transform:rotate(1.5deg)}
+.shot img,.shot video{width:100%;border-radius:3px;background:#000}
+.shot.tall{max-width:330px;justify-self:center}
+.port{position:absolute;left:50%;top:50%;z-index:3;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:var(--cream);
+  border:5px solid var(--aqua);outline:2.5px solid var(--navy);display:grid;place-items:center;font:400 26px/1 var(--title);color:var(--navy);transition:.3s}
+.port.lit{background:var(--pink);color:#fff;border-color:var(--sun)}
+.stop h3{font:400 clamp(24px,2.3vw,34px)/1.05 var(--title);color:var(--navy);margin-bottom:10px}
+.stop p{font-size:16px;line-height:1.6;color:#2c3d6e}
+.stop p b{color:var(--navy)}
+.addr{margin-top:14px;display:flex;align-items:center;gap:8px;background:#fff;border:2.5px solid var(--navy);border-radius:999px;padding:6px 6px 6px 16px;box-shadow:3px 3px 0 var(--navy)}
+.addr span{flex:1;min-width:0;font:500 12.5px var(--mono);white-space:nowrap;overflow-x:auto;scrollbar-width:none}
+.addr span::-webkit-scrollbar{display:none}
+.addr button{flex:none;background:var(--sun);border:2px solid var(--navy);border-radius:999px;padding:8px 14px;font:800 12px/1 var(--body);letter-spacing:.08em}
+.addr button:hover{background:var(--pink);color:#fff}
+
+/* SUMMARY */
+#summary{background:var(--blush);text-align:center;overflow:hidden}
+#summary .burst{position:absolute;left:50%;top:44%;width:1400px;height:1400px;margin:-700px 0 0 -700px;z-index:0;pointer-events:none;opacity:.55;
+  background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.9) 0 7deg,transparent 7deg 15deg);
+  -webkit-mask:radial-gradient(circle,#000 0,transparent 55%);mask:radial-gradient(circle,#000 0,transparent 55%);animation:spin 90s linear infinite}
+#summary>*{position:relative;z-index:1}
+.hnif{font-size:clamp(64px,8.4vw,150px);margin:12px auto 0;max-width:1100px;transform:rotate(-3deg)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:960px;margin:34px auto 0;text-align:left}
+.fact{background:#fff;border:2.5px solid var(--navy);border-radius:20px;padding:16px 18px;box-shadow:5px 5px 0 var(--navy)}
+.fact:nth-child(1){border-top:10px solid var(--pink)}.fact:nth-child(2){border-top:10px solid var(--sun)}.fact:nth-child(3){border-top:10px solid var(--aqua)}
+.fact b{display:block;font:400 21px/1.05 var(--title)}
+.fact p{margin-top:8px;font-size:14.5px;line-height:1.5;color:#2c3d6e}
+.side-l{position:absolute!important;left:clamp(16px,4vw,90px);top:clamp(90px,8vw,150px);width:clamp(180px,14vw,240px);z-index:2!important;transform:rotate(-7deg)}
+.side-l .postcard{transform:none;box-shadow:-10px 10px 0 var(--pink)}
+.side-r{position:absolute!important;right:clamp(8px,3vw,60px);top:clamp(40px,4vw,80px);height:min(470px,28vw);width:auto;z-index:2!important;filter:drop-shadow(8px 8px 0 rgba(19,38,92,.18))}
+.board{display:block;width:min(1050px,100%);margin:36px auto 0;padding:14px;background:#fff;border:2.5px solid var(--navy);border-radius:10px;box-shadow:12px 12px 0 var(--navy);cursor:zoom-in;position:relative;transform:rotate(-.8deg)}
+.board img{width:100%;border-radius:4px}
+.board .zoom{position:absolute;right:26px;bottom:26px}
+.lb{position:fixed;inset:0;z-index:90;background:rgba(12,26,68,.94);display:none;overflow:auto;padding:24px 0;cursor:zoom-out}
+.lb.on{display:block}
+.lb img{width:min(1700px,96vw);margin:0 auto;border-radius:8px}
+
+/* BUY */
+/* ===== FAN ART: Fede's wall ===== */
+#fanart{background:var(--cream);text-align:center;overflow:hidden}
+#fanart h2 .stripe{font-size:clamp(50px,6.5vw,110px)}
+#fanart .sub{max-width:600px;margin:14px auto 0;color:var(--navy);font-size:clamp(16px,1.4vw,19px);line-height:1.5}
+.wall{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-flow:dense;gap:clamp(20px,3vw,40px);max-width:1180px;margin:44px auto 0;padding:0 10px}
+.pc{display:flex;flex-direction:column;font:inherit;background:#fff;padding:10px;border:2.5px solid var(--navy);border-radius:8px;box-shadow:10px 10px 0 var(--aqua);cursor:zoom-in;transform:rotate(var(--r,0deg));transition:transform .25s,box-shadow .25s;position:relative}
+.pc img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:4px;flex:1;min-height:0}
+.pc.sq{grid-row:span 2}
+.pc.sq img{aspect-ratio:auto;height:100%}
+.pc.sq.a{grid-area:1/3/3/4}
+.pc.sq.b{grid-area:2/1/4/2}
+.pc:nth-child(3n+2){box-shadow:-10px 10px 0 var(--pink)}
+.pc:nth-child(3n){box-shadow:10px 10px 0 var(--sun)}
+.pc:nth-child(1){--r:-1.6deg}.pc:nth-child(2){--r:1.2deg}.pc:nth-child(3){--r:2deg}.pc:nth-child(4){--r:1.4deg}.pc:nth-child(5){--r:-2deg}.pc:nth-child(6){--r:-1.2deg}.pc:nth-child(7){--r:1.6deg}
+.pc:hover{transform:rotate(0) scale(1.03);z-index:2;box-shadow:0 18px 40px rgba(19,38,92,.25)}
+@media(max-width:860px){.wall{grid-template-columns:1fr 1fr;align-items:start}.pc.sq{grid-row:auto}.pc.sq.a,.pc.sq.b{grid-area:auto}.pc.sq img{aspect-ratio:1;height:auto}}
+@media(max-width:520px){.wall{grid-template-columns:1fr;gap:26px}.pc{--r:0deg!important}}
+#buy{background:var(--sand);padding-bottom:110px}
+#buy h2 .stripe{font-size:clamp(50px,6.5vw,110px)}
+.buy-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:20px}
+.bstep{background:#fff;border:2.5px solid var(--navy);border-radius:22px;padding:18px;box-shadow:5px 5px 0 var(--navy);position:relative;overflow:hidden}
+.bstep .n{position:absolute;right:12px;top:6px;font:400 54px/1 var(--title);color:var(--aqua2)}
+.bstep small{font:800 11px/1 var(--body);letter-spacing:.24em;color:var(--hot)}
+.bstep h4{position:relative;font:400 22px/1.05 var(--title);margin:8px 0 8px}
+.bstep p{position:relative;font-size:14.5px;line-height:1.5;color:#2c3d6e}
+.keys{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:22px}
+.key{border:2.5px solid var(--navy);border-radius:999px 999px 26px 26px;padding:30px 12px 18px;text-align:center;box-shadow:5px 5px 0 var(--navy);position:relative}
+.key::before{content:"";position:absolute;left:50%;top:12px;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:var(--cream);border:2.5px solid var(--navy)}
+.key b{display:block;margin-top:14px;font:400 clamp(28px,2.6vw,42px)/1 var(--title);color:#fff;text-shadow:3px 3px 0 var(--navy)}
+.key small{display:block;margin-top:8px;font:800 12px/1 var(--body);letter-spacing:.28em;color:var(--navy)}
+.k1{background:var(--pink)}.k2{background:var(--aqua)}.k3{background:var(--sun)}.k4{background:var(--lilac)}
+
+/* CA chip, top left */
+.ca-corner{position:fixed;left:14px;top:14px;z-index:51;display:flex;align-items:center;gap:10px;flex-wrap:wrap;text-align:left;font:inherit;color:var(--navy);background:var(--cream);border:2.5px solid var(--navy);border-radius:14px;padding:7px 8px 7px 12px;box-shadow:4px 4px 0 var(--navy);cursor:pointer;max-width:calc(100vw - 28px);transform:rotate(-1deg);transition:transform .2s,box-shadow .2s}
+.ca-corner::before{content:"";position:absolute;inset:4px;border:2px dashed rgba(19,38,92,.28);border-radius:10px;pointer-events:none}
+.ca-corner .ca-addr{position:relative;display:block;font:500 clamp(10.5px,calc((50vw - 410px)/26.4),17px)/1.2 "DM Mono",ui-monospace,monospace;letter-spacing:.01em;color:var(--navy);white-space:nowrap;user-select:all;-webkit-user-select:all}
+.ca-corner .ca-addr b{font-weight:500;background:var(--sun);border-radius:4px;padding:0 3px;box-shadow:inset 0 -2px 0 rgba(19,38,92,.18)}
+.ca-corner .ca-btn{position:relative;flex:none;font:800 11px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--pink);border:2px solid var(--navy);border-radius:999px;padding:6px 10px;box-shadow:2px 2px 0 var(--navy)}
+.ca-corner:hover{transform:rotate(0) translate(-1px,-1px);box-shadow:7px 7px 0 var(--navy)}
+.ca-corner:hover .ca-btn{background:var(--hot)}
+@media(max-width:1360px){.ca-corner{top:72px}.ca-corner .ca-addr{font-size:14px}.hero .h-title{margin-top:54px}}
+@media(max-width:700px){.ca-corner{top:60px;left:8px;right:8px;max-width:none;padding:8px 9px;gap:8px;justify-content:center}.ca-corner .ca-addr{font-size:clamp(10px,2.85vw,14px)}.ca-corner .ca-btn{padding:6px 9px;font-size:10.5px}.hero .h-title{margin-top:58px}}
+.ca-lines .ca-pd{display:block;width:100%;height:auto;margin-top:12px}
+/* CA: postcard address */
+.ca-card{position:relative;z-index:8;width:min(1050px,92vw);margin:-70px auto -60px;background:var(--cream);border:2.5px solid var(--navy);border-radius:14px;
+  box-shadow:10px 10px 0 var(--navy);display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center;padding:18px 22px;transform:rotate(-.6deg)}
+.ca-card::before{content:"";position:absolute;inset:7px;border:2px dashed rgba(19,38,92,.3);border-radius:9px;pointer-events:none}
+.ca-stamp{width:74px;height:84px;background:var(--pink);border:3px dashed #fff;outline:2.5px solid var(--navy);display:grid;place-items:center;transform:rotate(-6deg)}
+.ca-stamp img{width:52px;height:52px;border-radius:6px}
+.ca-lines{min-width:0}
+.ca-lines .ca-fake{display:block;margin-top:10px;font:700 14px/1.4 var(--body);color:var(--hot)}
+.ca-lines .ca-fake b{font-family:"DM Mono",monospace;background:var(--sun);color:var(--navy);padding:1px 5px;border-radius:4px}
+.ca-lines small{display:block;font:800 12px/1 var(--body);letter-spacing:.26em;color:var(--hot)}
+.ca-lines .ca-text{display:block;margin-top:10px;background:none;padding:0 0 8px;border-bottom:2.5px solid var(--navy);border-radius:0;color:var(--navy);
+  font:400 clamp(18px,1.8vw,28px)/1.1 var(--title);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* FOOTER */
+footer.foot{position:relative;overflow:hidden;height:max(540px,calc(100vw * 724 / 2172));background:#0a8bfd url(assets/footer_beach2.jpg) center bottom/cover no-repeat}
+.foot-wave{position:absolute;inset:0 0 auto;width:100%;height:70px;z-index:2}
+.foot-soc{position:absolute;z-index:3;left:50%;transform:translateX(-50%);top:clamp(110px,18%,190px);display:flex;flex-direction:column;align-items:center;gap:14px}
+.foot-soc a{min-width:clamp(230px,18vw,300px);justify-content:flex-start;padding:12px 22px 12px 12px;font-size:17px}
+.foot-soc .ic{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;overflow:hidden;border:2px solid var(--navy);background:#fff;flex:none}
+.foot-soc .ic img{width:100%;height:100%;object-fit:cover}
+.foot-soc .ic-x{background:#000}
+.foot-soc .ic-x svg{width:50%;height:50%;color:#fff}
+.foot-fede{position:absolute;z-index:2;right:8vw;bottom:0;width:min(22vw,340px);pointer-events:none}
+
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,140px);z-index:99;background:var(--sun);color:var(--navy);border:2.5px solid var(--navy);border-radius:999px;
+  font:800 15px var(--body);padding:13px 22px;box-shadow:5px 5px 0 var(--navy);transition:transform .3s}
+.toast.on{transform:translate(-50%,0)}
+
+@media(max-width:1250px){.side-r{position:relative!important;right:auto;top:auto;display:block;margin:0 auto 4px;height:240px}.side-l{display:none}}
+@media(max-width:900px){.why-grid{grid-template-columns:1fr}.stop{grid-template-columns:1fr;gap:22px}.stop:nth-child(even) .shot{order:0}.route-line,.route-heart,.port{display:none}
+  .buy-steps,.keys{grid-template-columns:1fr 1fr}.facts{grid-template-columns:1fr}}
+@media(max-width:700px){
+  .top{inset:10px 0 auto}.pills a{font-size:11px;padding:8px 9px}
+  .hero{height:auto;min-height:0;display:flex;flex-direction:column;align-items:center;gap:18px;padding:80px 4vw 90px}
+  .h-title{position:relative;left:auto;top:auto;text-align:center}.h-title .stripe{font-size:34vw;transform:rotate(-5deg)}
+  .h-fede{position:relative;right:auto;bottom:auto;width:58vw}
+  .h-card{position:relative;left:auto;bottom:auto;width:100%;transform:none}
+  .ribbon div{font-size:17px}
+  .chip{min-width:0;flex:1 1 40%}
+  .buy-steps{grid-template-columns:1fr}
+  .ca-card{grid-template-columns:auto 1fr;margin:-50px auto -40px}.ca-card .sticker{grid-column:1/-1}
+  footer.foot{min-height:600px;background-size:auto 100%;background-position:30% bottom}
+  .foot-soc{top:90px}.foot-soc a{min-width:210px;font-size:14px}
+  .foot-fede{width:46vw;right:4vw}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+html,body{overflow-x:clip}
+.ribbon{margin-left:0;margin-right:0;width:100%}
+.k3 b{color:#fff}
+</style>
+</head>
+<body>
+
+<button type="button" class="ca-corner copy-ca" aria-label="$FEDE contract address bSU2Zy75MJiF25Y1VcV9ARhJv2hfai9w38vW1q6pump. Click to copy."><span class="ca-addr"><b>bSU2</b>Zy75MJiF25Y1VcV9ARhJv2hfai9w38vW1q6<b>pump</b></span><span class="ca-btn">Copy</span></button>
+<header class="top"><nav class="pills" id="pills">
+  <a href="#why">Why Fede</a><a href="#evidence">Evidence</a><a href="#summary">Summary</a><a href="#fanart">Fan art</a><a href="#buy">How to buy</a>
+</nav></header>
+
+<!-- ============ HERO ============ -->
+<div class="hero" id="start">
+  <div class="rays"></div>
+  <div class="h-title"><span class="stripe" aria-label="Fede">Fede</span><span class="tag">The flamingo from <b>GTA 6</b></span></div>
+  <div class="h-fede"><img src="assets/fede_anim.webp" alt="Fede: Rockstar's animation, heart-eyes AWOOGA" width="560" height="852"></div>
+  <div class="h-card">
+    <div class="polaroid"><video id="vid" src="assets/explainer.mp4" poster="assets/explainer.jpg" preload="auto" autoplay muted playsinline controls></video><div class="cap">how we found his name</div></div>
+    <div class="stamp"><img src="assets/r_source_mark.png" alt="Source: Rockstar Games website" width="256" height="236"><div style="min-width:0">
+      <b>Confirmed on Rockstar's own website</b>
+      <small><a href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">rockstargames.com/VI</a> · animation file: Fede_AWOOGA_v02</small></div></div>
+  </div>
+</div>
+
+<div class="ribbon" aria-hidden="true"><div>
+  <span>His name is Fede</span><span>Fede_AWOOGA_v02</span><span>rockstargames.com/VI</span><span>Macca &amp; Friends</span><span>$FEDE on Solana</span><span>AWOOGA</span>
+  <span>His name is Fede</span><span>Fede_AWOOGA_v02</span><span>rockstargames.com/VI</span><span>Macca &amp; Friends</span><span>$FEDE on Solana</span><span>AWOOGA</span>
+</div></div>
+
+<!-- ============ WHY ============ -->
+<section id="why">
+  <div class="why-grid">
+    <div class="rv">
+      <span class="eyebrow"><span class="deco"><i></i><i></i><i></i></span>Why his name is Fede</span>
+      <h2><span class="script">meet</span><span class="stripe">Fede</span></h2>
+      <p class="lede">Fede is the pink flamingo in heart-shaped sunglasses from <b>Macca the Gator</b> (billed as <b>Macca &amp; Friends</b>), the cartoon inside GTA 6. Rockstar hasn't printed his name anywhere public, but their website code names him: his animation is stored as <b>Fede_AWOOGA_v02</b>.</p>
+      <p class="lede"><b>AWOOGA</b> is the gag in the clip: his eyes pop out of his head as hearts. A second code file lists the panels in order and calls him <b>"fede"</b> again. The same system names the rest of the cast (Macca, Chunkee, Pinche), and those names are confirmed by Rockstar elsewhere.</p>
+      <div class="chips">
+        <div class="chip c1"><small>FILE</small><b>Fede_AWOOGA_v02</b></div>
+        <div class="chip c2"><small>GAG</small><b>AWOOGA</b></div>
+        <div class="chip c3"><small>SHOW</small><b>Macca &amp; Friends</b></div>
+      </div>
+    </div>
+    <div class="postcard rv"><img src="assets/fede_pool.jpg" alt="Fede the flamingo on Ocean Drive" loading="lazy"><span class="pc-stamp">Ocean<br>Drive</span></div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none" style="background:#fff6e9" aria-hidden="true"><path d="M0 30 Q 180 70 360 30 T 720 30 T 1080 30 T 1440 30 V70 H0Z" fill="#bdf3f8"/></svg>
+
+<!-- ============ EVIDENCE ============ -->
+<section id="evidence">
+  <div class="head rv">
+    <span class="eyebrow"><span class="deco"><i></i><i></i><i></i></span>The evidence</span>
+    <h2><span class="stripe">Five steps to check</span></h2>
+    <p class="lede" style="margin:0 auto">Every step is on Rockstar's own website. Copy each link and open it in your browser.</p>
+  </div>
+  <div class="route" id="route">
+    <div class="route-line"><div class="route-fill" id="routeFill"></div></div>
+    <div class="route-heart" id="routeHeart">♥</div>
+
+    <div class="stop rv"><div class="shot"><img src="assets/ev1.jpg" alt="Rockstar's GTA VI site, Collector's Box card" loading="lazy"></div>
+      <div><h3>The Collector's Box</h3><p>On Rockstar's official GTA VI site, scroll to <b>Shop</b>, find <b>"Collector's Box: The Vice City Collection"</b> and click <b>Explore Now</b>.</p>
+      <div class="addr"><span>https://www.rockstargames.com/VI</span><button class="copy" data-copy="https://www.rockstargames.com/VI">COPY</button></div></div><span class="port">1</span></div>
+    <div class="stop rv"><div class="shot"><img src="assets/ev2.jpg" alt="Collector's Box page, flamingo panel bottom right" loading="lazy"></div>
+      <div><h3>Fede's panel: bottom right</h3><p>The page has eight animated panels. Fede is the bottom-right one. The page itself shows no character names; they are in the code that loads the panels.</p>
+      <div class="addr"><span>rockstargames.com/VI  ›  Shop  ›  Explore Now</span><button class="copy" data-copy="https://www.rockstargames.com/VI">COPY</button></div></div><span class="port">2</span></div>
+    <div class="stop rv"><div class="shot"><img src="assets/ev3.jpg?v=2" alt="Site code with Fede_AWOOGA_v02" loading="lazy"></div>
+      <div><h3>The code names him Fede</h3><p>A code file on the same site lists every animation on that page. The flamingo's is stored as <code>videos/ce/Fede_AWOOGA_v02</code>. Open it, press Cmd+F, search <code>Fede_AWOOGA</code>.</p>
+      <div class="addr"><span>https://www.rockstargames.com/VI/_next/static/chunks/16g7lr_v.3drd.js</span><button class="copy" data-copy="https://www.rockstargames.com/VI/_next/static/chunks/16g7lr_v.3drd.js">COPY</button></div></div><span class="port">3</span></div>
+    <div class="stop rv"><div class="shot"><img src="assets/ev4.jpg" alt="Second code file with the animation order" loading="lazy"></div>
+      <div><h3>A second file calls him "fede"</h3><p>A separate file sets the animation order: <code>plane, chunkie, sunny, fede, palm, pinche, lowrider, macca</code>. Written for a different job, it uses the same name.</p>
+      <div class="addr"><span>https://www.rockstargames.com/VI/_next/static/chunks/080g1zt0g7.7h.js</span><button class="copy" data-copy="https://www.rockstargames.com/VI/_next/static/chunks/080g1zt0g7.7h.js">COPY</button></div></div><span class="port">4</span></div>
+    <div class="stop rv"><div class="shot tall"><video src="assets/ev5_fede.mp4" poster="assets/ev5_fede.jpg" autoplay muted loop playsinline preload="auto" aria-label="Rockstar's flamingo animation: heart-eyes AWOOGA"></video></div>
+      <div><h3>The clip matches the file name</h3><p>The file is a video on Rockstar's server: the flamingo's eyes pop out as hearts, the classic cartoon <b>"AWOOGA!"</b>. The file name describes this exact clip.</p>
+      <div class="addr"><span>https://www.rockstargames.com/VI/_next/static/media/1280_av1.0f8g082hdvi8t.mp4</span><button class="copy" data-copy="https://www.rockstargames.com/VI/_next/static/media/1280_av1.0f8g082hdvi8t.mp4">COPY</button></div></div><span class="port">5</span></div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none" style="background:#bdf3f8" aria-hidden="true"><path d="M0 40 Q 240 0 480 40 T 960 40 T 1440 40 V70 H0Z" fill="#ffe0ee"/></svg>
+
+<!-- ============ SUMMARY ============ -->
+<section id="summary">
+  <div class="burst" aria-hidden="true"></div>
+  <div class="side-l rv" aria-hidden="true"><div class="postcard"><img src="assets/fede_hearts_card.jpg" alt="" loading="lazy"></div></div>
+  <img class="side-r rv" src="assets/fede_standing.webp" alt="Fede, standing" width="644" height="1100" loading="lazy">
+  <span class="eyebrow"><span class="deco"><i></i><i></i><i></i></span>Summary</span>
+  <h2 class="hnif stripe">His Name Is Fede</h2>
+  <div class="facts">
+    <div class="fact rv"><b>File name</b><p><code>Fede_AWOOGA_v02</code>, on Rockstar's own server.</p></div>
+    <div class="fact rv"><b>Second file</b><p>A separate code file calls him "fede" in the animation order.</p></div>
+    <div class="fact rv"><b>Proven system</b><p>The same list names Macca, Chunkee and Pinche correctly.</p></div>
+  </div>
+  <button class="board rv" id="boardBtn" type="button" aria-label="Open the evidence board full size"><img src="assets/evidence_board.jpg" alt="Evidence board: the case of the nameless flamingo" loading="lazy"><span class="zoom sticker pink">Click to zoom</span></button>
+</section>
+<div class="lb" id="lb"><img src="assets/evidence_board.jpg" alt="Evidence board, full size"></div>
+
+<svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none" style="background:#ffe0ee" aria-hidden="true"><path d="M0 30 Q 180 70 360 30 T 720 30 T 1080 30 T 1440 30 V70 H0Z" fill="#fff6e9"/></svg>
+
+<!-- ============ FAN ART ============ -->
+<section id="fanart">
+  <div class="rv">
+    <span class="eyebrow"><span class="deco"><i></i><i></i><i></i></span>Fan art</span>
+    <h2><span class="stripe">Fede's wall</span></h2>
+    <p class="sub">Art from the community. Post yours on X and tag $FEDE, the best ones go up here.</p>
+  </div>
+  <div class="wall" id="wall">
+    <button class="pc rv" type="button" data-full="assets/fan_01.jpg" aria-label="Fan art: Fede on the sand at Vice City Beach, full size"><img src="assets/fan_01.jpg" alt="Fede the flamingo in pink shades on Vice City Beach, lifeguard tower behind him" width="1200" height="675" loading="lazy"></button>
+    <button class="pc rv" type="button" data-full="assets/fan_02.jpg" aria-label="Fan art: Fede on the boardwalk, full size"><img src="assets/fan_02.jpg" alt="Fede the flamingo on the beach with the Ocean Drive hotels behind him" width="1200" height="675" loading="lazy"></button>
+    <button class="pc rv sq a" type="button" data-full="assets/fan_07.jpg" aria-label="Fan art: Fede on a jet ski, full size"><img src="assets/fan_07.jpg" alt="Fede the flamingo with heart eyes riding a pink jet ski past the Vice City skyline" width="900" height="900" loading="lazy"></button>
+    <button class="pc rv" type="button" data-full="assets/fan_03.jpg" aria-label="Fan art: Fede and a pink convertible, full size"><img src="assets/fan_03.jpg" alt="Fede the flamingo standing on the bonnet of a pink convertible by the beach" width="1200" height="675" loading="lazy"></button>
+    <button class="pc rv sq b" type="button" data-full="assets/fan_06.jpg" aria-label="Fan art: Fede driving a speedboat at sunset, full size"><img src="assets/fan_06.jpg" alt="Fede the flamingo with heart eyes at the wheel of a pink speedboat under a sunset sky" width="900" height="900" loading="lazy"></button>
+    <button class="pc rv" type="button" data-full="assets/fan_04.jpg" aria-label="Fan art: Fede at the beach bar, full size"><img src="assets/fan_04.jpg" alt="Fede the flamingo at a thatched beach bar with a neon palm sign" width="1200" height="675" loading="lazy"></button>
+    <button class="pc rv" type="button" data-full="assets/fan_05.jpg" aria-label="Fan art: Fede under the parasols, full size"><img src="assets/fan_05.jpg" alt="Fede the flamingo on the sand between sun loungers, a bottle on ice beside him" width="1200" height="675" loading="lazy"></button>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none" style="background:#fff6e9" aria-hidden="true"><path d="M0 30 Q 180 70 360 30 T 720 30 T 1080 30 T 1440 30 V70 H0Z" fill="#ffe6c4"/></svg>
+
+<!-- ============ BUY ============ -->
+<section id="buy">
+  <div class="rv">
+    <span class="eyebrow"><span class="deco"><i></i><i></i><i></i></span>$FEDE on Solana</span>
+    <h2><span class="stripe">How to buy $Fede</span></h2>
+  </div>
+  <div class="buy-steps">
+    <div class="bstep rv"><span class="n">1</span><small>STEP 1</small><h4>Get a wallet</h4><p>Install Phantom or Solflare. Write the recovery phrase down offline.</p></div>
+    <div class="bstep rv"><span class="n">2</span><small>STEP 2</small><h4>Add SOL</h4><p>Buy SOL on an exchange and send it to your wallet.</p></div>
+    <div class="bstep rv"><span class="n">3</span><small>STEP 3</small><h4>Connect</h4><p>Open pump.fun or Jupiter and connect your wallet.</p></div>
+    <div class="bstep rv"><span class="n">4</span><small>STEP 4</small><h4>Swap for $FEDE</h4><p>Paste the official CA from this page, double-check it, choose an amount, swap.</p></div>
+  </div>
+  <div class="keys rv">
+    <div class="key k1"><b>1B</b><small>SUPPLY</small></div>
+    <div class="key k2"><b>0%</b><small>TAX</small></div>
+    <div class="key k3"><b>Fair</b><small>LAUNCH</small></div>
+    <div class="key k4"><b>Burned</b><small>LIQUIDITY</small></div>
+  </div>
+</section>
+
+<div class="ca-card" role="region" aria-label="$FEDE contract address">
+  <div class="ca-stamp"><img src="assets/favicon.png" alt="" width="64" height="64"></div>
+  <div class="ca-lines"><small>THE ONLY OFFICIAL $FEDE CONTRACT ADDRESS</small><img class="ca-pd" src="assets/ca_fede_pd.png" alt="" width="4473" height="244"><code class="ca-text">bSU2Zy75MJiF25Y1VcV9ARhJv2hfai9w38vW1q6pump</code><span class="ca-fake">Starts with <b>bSU2</b>, ends with <b>pump</b>. Any other $FEDE address is a fake, whatever account posts it.</span></div>
+  <button type="button" class="copy-ca sticker pink">Copy CA</button>
+</div>
+
+<footer class="foot">
+  <svg class="foot-wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 H1440 V30 Q 1260 70 1080 30 T 720 30 T 360 30 T 0 30Z" fill="#ffe6c4"/></svg>
+  <nav class="foot-soc" aria-label="$FEDE links">
+    <a class="sticker" href="https://x.com/FedeFlamingo" target="_blank" rel="noopener" aria-label="$FEDE on X"><span class="ic ic-x"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.2l-4.9-6.4L6.3 22H3.2l7.3-8.3L1 2h6.3l4.4 5.9zm-1.1 18h1.7L6.3 3.9H4.5z"/></svg></span>X</a>
+    <a class="sticker aqua" href="https://dexscreener.com/solana/bSU2Zy75MJiF25Y1VcV9ARhJv2hfai9w38vW1q6pump" target="_blank" rel="noopener" aria-label="$FEDE chart on DexScreener"><span class="ic"><img src="assets/logo_dexscreener.png" alt=""></span>Chart</a>
+    <a class="sticker pink" href="https://pump.fun/coin/bSU2Zy75MJiF25Y1VcV9ARhJv2hfai9w38vW1q6pump" target="_blank" rel="noopener" aria-label="$FEDE on pump.fun"><span class="ic"><img src="assets/logo_pumpfun.png" alt=""></span>pump.fun</a>
+  </nav>
+  <div class="foot-fede" aria-hidden="true"><img src="assets/fede_anim.webp" alt=""></div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  var CA = "bSU2Zy75MJiF25Y1VcV9ARhJv2hfai9w38vW1q6pump";
+
+  var $=function(s,r){return(r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var tt;function say(t){var e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){e.classList.remove('on')},2200)}
+  function copy(t,ok){(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){say(ok)},function(){say(t)})}
+  if(CA)$$('.ca-text').forEach(function(e){e.textContent=CA});
+  $$('.copy-ca').forEach(function(b){b.addEventListener('click',function(){if(!CA){say('The contract address will be posted at launch.');return}copy(CA,'CA copied.')})});
+  $$('.copy').forEach(function(b){b.addEventListener('click',function(){copy(b.dataset.copy,'Link copied.')})});
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  $$('.rv').forEach(function(e){io.observe(e)});
+
+  /* nav state + dotted route that fills to each porthole */
+  var links=$$('#pills a'),secs=links.map(function(a){return $(a.getAttribute('href'))});
+  var route=$('#route'),fill=$('#routeFill'),heart=$('#routeHeart'),ports=$$('.port'),ticking=false;
+  function frame(){ticking=false;
+    var cur=-1;secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<innerHeight*.4)cur=i});links.forEach(function(a,i){a.classList.toggle('on',i===cur)});
+    var r=route.getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight*.6-r.top)/r.height)),hy=p*r.height;
+    fill.style.height=hy+'px';heart.style.top=hy+'px';heart.classList.toggle('on',p>.003&&p<.999);
+    ports.forEach(function(n){var nr=n.getBoundingClientRect();n.classList.toggle('lit',(nr.top+nr.height/2-r.top)<=hy+2)})}
+  addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(frame)}},{passive:true});addEventListener('resize',frame);frame();
+
+  var lb=$('#lb'),lbImg=lb.querySelector('img');function openLb(src,alt){lbImg.src=src;lbImg.alt=alt||'';lb.classList.add('on');lb.scrollTo(0,0)}$('#boardBtn').addEventListener('click',function(){openLb('assets/evidence_board.jpg','Evidence board, full size')});$$('#wall .pc').forEach(function(b){b.addEventListener('click',function(){openLb(b.dataset.full,b.getAttribute('aria-label'))})});lb.addEventListener('click',function(){lb.classList.remove('on')});
+  addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on')});
+
+  var v=$('#vid'),userPaused=false;v.muted=true;
+  function go(){if(!userPaused&&v.paused){var pr=v.play();if(pr&&pr.catch)pr.catch(function(){})}}
+  v.addEventListener('pause',function(){if(!v.ended&&document.visibilityState==='visible')userPaused=true});v.addEventListener('play',function(){userPaused=false});
+  if(document.readyState==='complete')go();else addEventListener('load',go);v.addEventListener('canplay',go,{once:true});
+  new IntersectionObserver(function(e){if(e[0].isIntersecting)go()},{threshold:.4}).observe(v);
+})();
+</script>
+</body>
+</html>
